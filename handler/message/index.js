@@ -2,7 +2,7 @@ require('dotenv').config()
 const { decryptMedia, Client } = require('@open-wa/wa-automate')
 const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta').locale('id')
-const { downloader, cekResi, removebg, urlShortener, meme, translate, getLocationData } = require('../../lib')
+const { downloader, cekResi, removebg, urlShortener, meme, translate, getLocationData, edukasi } = require('../../lib')
 const { msgFilter, color, processTime, isUrl } = require('../../utils')
 const mentionList = require('../../utils/mention')
 const { uploadImages } = require('../../utils/fetcher')
@@ -29,6 +29,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const arg = body.trim().substring(body.indexOf(' ') + 1)
         const args = body.trim().split(/ +/).slice(1)
+        const string = args.slice().join(' ')
         const isCmd = body.startsWith(prefix)
         const uaOverride = process.env.UserAgent
         const url = args.length !== 0 ? args[0] : ''
@@ -217,6 +218,14 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                     .catch((err) => console.error(err))
             })
                 .catch((err) => client.reply(from, `Error, url tidak valid atau tidak memuat video. [Invalid Link or No Video] \n\n${err}`, id))
+            break
+        // Education Command
+        case 'brainly':
+            if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
+            await client.reply(from, '_Scraping Metadata..._ \n\nTerimakasih telah menggunakan bot ini, kamu dapat membantu pengembangan bot ini dengan menyawer melalui https://saweria.co/donate/Kry9toN \nTerimakasih.', id)
+            edukasi.brainly(string)
+                .then((result) => client.reply(from, result, id))
+                .catch(() => client.reply(from, 'Error, Pertanyaan mu tidak ada di database kami.', id))
             break
         // Other Command
         case 'meme':
