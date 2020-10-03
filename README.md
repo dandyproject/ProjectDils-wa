@@ -23,10 +23,11 @@
 |       ✅        |   Facebook Video Downloader (SD & HD)         |
 |       ✅      |   Instagram Video Downloader                  |
 
-| Other  |                     Feature                     |
+| Education  |                     Feature                     |
 | :------------: | :---------------------------------------------: |
 |       ✅        |   Translate text (quote only)                  |
 |       ✅        |   Brainly Search Engine         |
+|       ✅       |   Wiki search engine                            |
 
 | Other  |                     Feature                     |
 | :------------: | :---------------------------------------------: |
