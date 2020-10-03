@@ -22,6 +22,8 @@
 |       ✅        |   Twitter Video Downloader                    |
 |       ✅        |   Facebook Video Downloader (SD & HD)         |
 |       ✅      |   Instagram Video Downloader                  |
+|       ✅      |   Youtube to mp3  Downloader                  |
+|       ✅      |   Youtube to mp4  Downloader                  |
 
 | Education  |                     Feature                     |
 | :------------: | :---------------------------------------------: |

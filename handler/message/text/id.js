@@ -56,6 +56,14 @@ Penggunaan: kirim pesan dengan format *!ig https://www.instagram.com/p/BPOd1vhDM
 Untuk mengunduh photo dan video dari Twitter.
 Penggunaan: kirim pesan dengan format *!twt https://twitter.com/ntsana_/status/1306108656887324672*
 
+5. *!ytmp3* _<youtube url>_
+Untuk mengunduh mp3 dari Youtube.
+Penggunaan: kirim pesan dengan format *!ytmp3 https://www.youtube.com/.....*
+
+6. *!ytmp4* _<youtube url>_
+Untuk mengunduh video dari Youtube.
+Penggunaan: kirim pesan dengan format *!ytmp4 https://www.youtube.com/.....*
+
 Edukasi:
 
 1. *!translate* _<kode bahasa>_

@@ -219,6 +219,42 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             })
                 .catch((err) => client.reply(from, `Error, url tidak valid atau tidak memuat video. [Invalid Link or No Video] \n\n${err}`, id))
             break
+        case 'ytmp3':
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
+            downloader.ytmp3(url).then(async (ytMeta) => {
+                const title = ytMeta.title
+                const thumbnail = ytMeta.thumb
+                const links = ytMeta.result
+                const filesize = ytMeta.filesize
+                const status = ytMeta.status
+                if ( status !== 200) client.reply(from, 'Maaf, link anda tidak valid.', id)
+                if (Number(filesize.split(' MB')[0]) >= 30.00) return reject('Maaf durasi video sudah melebihi batas maksimal !')
+                client.sendFileFromUrl(from, thumbnail, 'thumbnail.jpg', `Judul: ${title}\nUkuran File: ${filesize}\n\nSilakan di tunggu lagi proses boss....`, null, true)
+                await client.sendFileFromUrl(from, links, `${title}.mp3`, null, null, true)
+                .catch(() => client.reply(from, 'Terjadi kesalahan mungkin link yang anda kirim tidak valid!', id))
+
+            })
+            break
+        case 'ytmp4' :
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
+            downloader.ytmp4(url).then(async (ytMetav) => {
+                const title = ytMetav.title
+                const thumbnail = ytMetav.thumb
+                const links = ytMetav.result
+                const filesize = ytMetav.filesize
+                const res = ytMetav.resolution
+                const status = ytMetav.status
+                if ( status !== 200) client.reply(from, 'Maaf, link anda tidak valid.', id)
+                if (Number(filesize.split(' MB')[0]) >= 40.00) return reject('Maaf durasi video sudah melebihi batas maksimal !')
+                client.sendFileFromUrl(from, thumbnail, 'thumbnail.jpg', `Judul: ${title}\nUkuran File: ${filesize}\nResolusi: ${res}\n\nSilakan di tunggu lagi proses boss....`, null, true)
+                await client.sendFileFromUrl(from, links, `${title}.mp4`, null, null, true)
+                .catch(() => client.reply(from, 'Terjadi kesalahan mungkin link yang anda kirim tidak valid!', id))
+          })
+          break
         // Education Command
         case 'brainly':
             if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
