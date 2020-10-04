@@ -50,11 +50,11 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!ceklokasi*
  ┠ *!lirik* _<Band> <Judul Lagu>_
  ┠ *!igstalk* _<username>_
- ┠ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
+ ┠ *!quotemaker* _<text>_|_<author>_|_<theme>_
  ┠ *!tnc*
  ┠ *!donasi*
 
-Silahkan baca *!readme*
+❗ Silahkan baca *!readme* untuk lihat cara penggunaan.
 
 Hope you have a great day!✨`
 }
@@ -79,10 +79,36 @@ Hope you have a great day!✨`
 
 exports.textReadme = () => {
     return `
-Berikut ini list yang dibutuhkan untuk menjalankan beberapa fitur:
+Cara penggunaan beberapa fitur:
 
-• Kode Bahasa: *https://bit.ly/33FVldE*
-• Daftar kurir: jne, pos, tiki, wahana, jnt, rpx, sap, sicepat, pcp, jet, dse, first, ninja, lion, idl, rex.
+*!sticker*
+ ┠ *Ex:* Kirim gambar dengan caption *!sticker* atau reply gambar dengan *!sticker*
+
+*!translate* _<Kode Bahasa>_
+ ┠ Kode Bahasa: *https://bit.ly/33FVldE*
+ ┠ *Ex:* *!translate en* kemudian reply ke text
+
+*!cekresi* _<kurir>_ _<nomer resi>
+ ┠ Daftar kurir: jne, pos, tiki, jnt, sicepat, jet, ninja.
+ ┠ *Ex:* *!cekresi sicepat 123456789*
+
+*!quotemaker* _<text>_|_<author>_|_<theme>_
+ ┠ Text min. 3 kata
+ ┠ *Ex:* *!quotemaker this is quote maker|Aidil|Urban*
+ ┠ ❗ Harap perhatikan penggunaan spasi pada tanda pemisah |
+
+*!meme* _<teks atas>_ | _<teks bawah>_
+ ┠ *Ex:* *!meme text atas | text bawah*
+ ┠ ❗ Harap perhatikan penggunaan spasi pada tanda pemisah |
+
+*!ceklokasi*
+ ┠ *Ex:* reply send location kamu dengan *!ceklokasi*
+
+*!lirik* _<Band> <Judul Lagu>_
+ ┠ *Ex:* *!lirik Nadin Amizah Bertaut*
+
+*!igstalk* _<Username>_
+ ┠ *Ex:* *!igstalk aidilaryanto*
 
 Terimakasih.`
 }
