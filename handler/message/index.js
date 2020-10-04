@@ -442,7 +442,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             for (let i = 0; i < groupMem.length; i++) {
                 all += ` @${groupMem[i].id.replace(/@c.us/g, '')}`
             }
-            await sleep(2000)
+            await functions.sleep(2000)
             await client.sendTextWithMentions(from, all)
             break
         case 'botstat': {
