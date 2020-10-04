@@ -334,7 +334,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 const theme = arg.split('|')[2]
                 await functions.quotemaker(quotes, author, theme).then(amsu => {
                     client.sendFile(from, amsu, 'quotesmaker.jpg','Ini quotes kamu').catch(() => {
-                       client.reply(from, mess.error.Qm, id)
+                       client.reply(from, 'Maaf, kemungkinan tema tidak tersedia', id)
                     })
                 })
             } else {
