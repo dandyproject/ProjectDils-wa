@@ -48,6 +48,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!resi* _<kurir>_ _<nomer resi>_
  ┠ *!meme* _<teks atas>_ | _<teks bawah>_
  ┠ *!ceklokasi*
+ ┠ *!lirik* _<Band> <Judul Lagu>_
  ┠ *!tnc*
  ┠ *!donasi*
 
