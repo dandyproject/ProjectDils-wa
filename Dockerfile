@@ -1,14 +1,6 @@
 FROM node:lts
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install
-RUN npm install --only=dev --ignore-scripts
-
-COPY . .
-
+# Install package
 RUN set -x \
 && apt-get update \
 && apt-get install gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
@@ -21,6 +13,20 @@ ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils 
 && rm google-chrome-stable_current_amd64.deb \
 && apt autoremove --yes
 
+# Run on port 8080
 EXPOSE 8080
+
+# Clone Repo
+RUN git clone -b master https://github.com/aidilaryanto/projectdils-wa /home/projectdils/
+
+# Copy session file for permanent login
+COPY ProjectDils.data.json /home/projectdils/ProjectDils.data.json
+
+# Set Wworking Directory
+WORKDIR /home/projectdils/
+
+# Install Modules Dependencies
+RUN npm install
+RUN npm install --only=dev --ignore-scripts
 
 CMD ["npm", "start"]

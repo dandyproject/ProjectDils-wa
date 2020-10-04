@@ -1,17 +1,7 @@
 <div align="center">
  
 # Whatsapp Bot - sticker creator
-[![Codefactor](https://www.codefactor.io/repository/github/yogasakti/imagetosticker/badge)](https://www.codefactor.io/repository/github/yogasakti/imagetosticker)
-<details>
- <summary>🥟 Help me!</summary>
-
- [Saweria](https://saweria.co/donate/yogasakti)
- 
- [Trakteer](https://trakteer.id/red-emperor)
- 
- [Paypal.me](https://paypal.me/yshputra)
- 
-</details>
+[![Codefactor](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA/badge)](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA)
 </div>
 
 
@@ -67,8 +57,8 @@ This project require NodeJS v12.
 Clone this project
 
 ```bash
-> git clone https://github.com/YogaSakti/imageToSticker.git
-> cd imageToSticker
+> git clone https://github.com/aidilaryanto/ProjectDils-wa.git
+> cd ProjectDils-wa
 ```
 
 Install the dependencies:

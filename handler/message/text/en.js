@@ -13,10 +13,11 @@ By using this source code / bot, you agree to the following Terms and Conditions
     • burning forest/ deforestation
     • hate speech or discrimination based on age, sex, gender identity, race, sexuality, religion, nationality
 
-Source Code BOT: https://github.com/YogaSakti/imageToSticker
+Source Code BOT: https://github.com/aidilaryanto/ProjectDils-wa
+Credits : YogaSakti
 NodeJS WhatsApp library: https://github.com/open-wa/wa-automate-nodejs
 
-Best regards, Yoga Sakti.`
+Best regards, Aidil Aryanto.`
 }
 
 exports.textMenu = (pushname) => {

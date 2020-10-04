@@ -198,7 +198,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'facebook':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('facebook.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._ \n\nTerimakasih telah menggunakan bot ini, kamu dapat membantu pengembangan bot ini dengan menyawer melalui https://saweria.co/donate/yogasakti atau mentrakteer melalui https://trakteer.id/red-emperor \nTerimakasih.', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
             downloader.facebook(url).then(async (videoMeta) => {
                 const title = videoMeta.response.title
                 const thumbnail = videoMeta.response.thumbnail
