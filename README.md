@@ -41,7 +41,6 @@
 |       ✅        |   Quote Maker            |
 |      BETA        |   Anti Spam                                   |
 
-
 | Grup Only  |                     Feature                     |
 | :------------: | :---------------------------------------------: |
 |       ✅        |   Promote User                  |
@@ -49,7 +48,19 @@
 |       ✅        |   Kick User                     |
 |       ✅        |   Delete bot message            |
 |       ✅        |   Mention All User      |
+|       ✅        |   Get Admin List      |
+|       ✅        |   Get Link Group      |
+|       ✅        |   Get Owner Group      |
+
+| Owner Grup Only  |                     Feature                     |
+| :------------: | :---------------------------------------------: |
 |       ✅        |   Kick All User      |
+
+| Owner Bot Only  |                     Feature                     |
+| :------------: | :---------------------------------------------: |
+|       ✅        |   Broadcast                  |
+|      SOON        |   Leave All Group                   |
+|      SOON        |   Clear All Messages                     |
 
 ## To-Do
  - Add More Feature
@@ -79,8 +90,7 @@ Install the dependencies:
 ```
 
 ### Usage
-1. run the Whatsapp bot
-
+Before running this script, first edit [`THIS`](https://github.com/aidilaryanto/ProjectDils-wa/blob/master/handler/message/index.js.js#L20) section with your WhatsApp number, remember your WhatsApp number!  Not a bot number, then
 ```bash
 > npm start
 ```

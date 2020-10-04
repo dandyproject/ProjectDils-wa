@@ -17,6 +17,8 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         let { pushname, verifiedName, formattedName } = sender
         pushname = pushname || verifiedName || formattedName // verifiedName is the name of someone who uses a business account
         const botNumber = await client.getHostNumber() + '@c.us'
+        const ownerNumber = '628xxxxx@c.us'
+        const isOwner = sender.id === ownerNumber
         const groupId = isGroupMsg ? chat.groupMetadata.id : ''
         const groupAdmins = isGroupMsg ? await client.getGroupAdmins(groupId) : ''
         const groupMembers = isGroupMsg ? await client.getGroupMembersId(groupId) : ''
@@ -386,6 +388,39 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
             await client.demoteParticipant(groupId, mentionedJidList[0])
             await client.sendTextWithMentions(from, `Request diterima, menghapus jabatan @${mentionedJidList[0].replace('@c.us', '')}.`)
+            break
+        case 'linkgroup':
+            if (!isBotGroupAdmins) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan ketika bot menjadi admin [Bot not Admin]', id)
+            if (isGroupMsg) {
+                const inviteLink = await client.getGroupInviteLink(groupId);
+                client.sendLinkWithAutoPreview(from, inviteLink, `\nLink group *${name}*`)
+            } else {
+            	client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
+            }
+            break
+        case 'bc':
+            if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot! [Owner Bot Only]', id)
+            let msg = body.slice(4)
+            const chatz = await client.getAllChatIds()
+            for (let ids of chatz) {
+                var cvk = await client.getChatById(ids)
+                if (!cvk.isReadOnly) await client.sendText(ids, `[ ProjectDils BOT Broadcast ]\n\n${msg}`)
+            }
+            client.reply(from, 'Broadcast Success!', id)
+            break
+        case 'adminlist':
+            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
+            let mimin = ''
+            for (let admon of groupAdmins) {
+                mimin += `• @${admon.replace(/@c.us/g, '')}\n`
+            }
+            await functions.sleep(2000)
+            await client.sendTextWithMentions(from, mimin)
+            break
+        case 'ownergroup':
+            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
+            const Owner_ = chat.groupMetadata.owner
+            await client.sendTextWithMentions(from, `Owner Group : @${Owner_}`)
             break
         case 'bye':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)

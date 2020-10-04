@@ -62,25 +62,19 @@ Hope you have a great day!✨`
 exports.textAdmin = () => {
     return `
 ⚠ [ *Admin Group Only* ] ⚠ 
-Berikut adalah beberapa fitur admin grup yang ada pada bot ini!
 
-1. *!kick* @user
-Untuk mengeluarkan member dari grup (bisa lebih dari 1).
+*Group Features*
+ ┠ *!kick* @user
+ ┠ *!kickall*
+ ┠ *!promote* @user
+ ┠ *!demote* @user
+ ┠ *!tagall*
+ ┠ *!del*
+ ┠ *!adminlist*
+ ┠ *!ownergroup*
+ ┠ *!linkgroup*
 
-2. *!kickall*
-Untuk mengeluarkan semua  member dari grup (Owner Group Only).
-
-3. *!promote* @user
-Untuk mempromosikan member menjadi Admin grup.
-
-4. *!demote* @user
-Untuk demosikan Admin grup.
-
-5. *!tagall*
-Untuk mention semua member grup.
-
-6. *!del*
-Untuk menghapus pesan bot (balas pesan bot dengan !del)`
+Hope you have a great day!✨`
 }
 
 exports.textReadme = () => {
