@@ -24,7 +24,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 
         // Bot Prefix
-        const prefix = '#'
+        const prefix = '!'
         body = (type === 'chat' && body.startsWith(prefix)) ? body : ((type === 'image' && caption) && caption.startsWith(prefix)) ? caption : ''
         const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const arg = body.trim().substring(body.indexOf(' ') + 1)
@@ -58,7 +58,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'menu':
         case 'help':
             await client.sendText(from, menuId.textMenu(pushname))
-                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Menu Admin Grup: *#menuadmin*') : null)
+                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Menu Admin Grup: *!menuadmin*') : null)
             break
         case 'menuadmin':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
@@ -93,7 +93,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                     ? client.sendText(from, 'Maaf, link yang kamu kirim tidak memuat gambar. [No Image]')
                     : client.reply(from, 'Here\'s your sticker')).then(() => console.log(`Sticker Processed for ${processTime(t, moment())} Second`))
             } else {
-                await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim #menu [Wrong Format]', id)
+                await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim *!menu* [Wrong Format]', id)
             }
             break
         }
@@ -231,7 +231,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                     .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
                     .catch((err) => console.error(err))
             } else {
-                await client.reply(from, 'Tidak ada gambar! Untuk membuka cara penggnaan kirim #menu [Wrong Format]', id)
+                await client.reply(from, 'Tidak ada gambar! Untuk membuka cara penggunaan kirim *!menu* [Wrong Format]', id)
             }
             break
         case 'resi':
