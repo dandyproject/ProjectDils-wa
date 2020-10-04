@@ -17,7 +17,7 @@
   "homepage": "https://github.com/aidilaryanto/ProjectDils-wa",
   "license": "ISC",
   "dependencies": {
-    "@open-wa/wa-automate": "^2.0.25",
+    "@open-wa/wa-automate": "^2.0.28",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
     "file-type": "^15.0.1",
