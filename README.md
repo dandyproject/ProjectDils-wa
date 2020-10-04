@@ -48,6 +48,7 @@
 |       ✅        |   Kick User                     |
 |       ✅        |   Delete bot message            |
 |       ✅        |   Mention All User      |
+|       ✅        |   Kick All User      |
 
 ## To-Do
  - Add More Feature

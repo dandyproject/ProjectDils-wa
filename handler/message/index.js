@@ -353,6 +353,21 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 await client.removeParticipant(groupId, mentionedJidList[i])
             }
             break
+        case 'kickall':
+            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
+            const isGroupOwner = sender.id === chat.groupMetadata.owner
+            if (!isGroupOwner) return client.reply(from, 'Maaf, erintah ini hanya bisa di gunakan oleh Owner group! [Owner Group Only]', id)
+            if (!isBotGroupAdmins) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan ketika bot menjadi admin [Bot not Admin]', id)
+            const allMem = await client.getGroupMembers(groupId)
+            for (let i = 0; i < allMem.length; i++) {
+                if (groupAdmins.includes(allMem[i].id)) {
+                    console.log('Upss this is Admin group')
+                } else {
+                    await client.removeParticipant(groupId, allMem[i].id)
+                }
+            }
+            client.reply(from, 'Succes kick all member', id)
+            break
         case 'promote':
             if (!isGroupMsg) return await client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
             if (!isGroupAdmins) return await client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
@@ -386,8 +401,8 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'tagall':
         case 'everyone':
-            if (!isGroupMsg) return client.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (!isGroupAdmins) return client.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin group', id)
+            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan oleh admin group! [Admin Only]', id)
             const groupMem = await client.getGroupMembers(groupId)
             let all = ''
             for (let i = 0; i < groupMem.length; i++) {

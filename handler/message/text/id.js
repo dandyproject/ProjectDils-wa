@@ -66,16 +66,19 @@ Berikut adalah beberapa fitur admin grup yang ada pada bot ini!
 1. *!kick* @user
 Untuk mengeluarkan member dari grup (bisa lebih dari 1).
 
-2. *!promote* @user
+2. *!kickall*
+Untuk mengeluarkan semua  member dari grup (Owner Group Only).
+
+3. *!promote* @user
 Untuk mempromosikan member menjadi Admin grup.
 
-3. *!demote* @user
+4. *!demote* @user
 Untuk demosikan Admin grup.
 
-4. *!tagall*
-Untuk mention semua member grup. (Cooming Soon)
+5. *!tagall*
+Untuk mention semua member grup.
 
-5. *!del*
+6. *!del*
 Untuk menghapus pesan bot (balas pesan bot dengan !del)`
 }
 
