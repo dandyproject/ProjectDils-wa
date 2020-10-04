@@ -2,7 +2,7 @@ require('dotenv').config()
 const { decryptMedia, Client } = require('@open-wa/wa-automate')
 const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta').locale('id')
-const { downloader, cekResi, removebg, urlShortener, meme, translate, getLocationData, edukasi } = require('../../lib')
+const { downloader, cekResi, removebg, urlShortener, meme, translate, getLocationData, edukasi, sleep } = require('../../lib')
 const { msgFilter, color, processTime, isUrl } = require('../../utils')
 const mentionList = require('../../utils/mention')
 const { uploadImages } = require('../../utils/fetcher')
@@ -361,11 +361,15 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'tagall':
         case 'everyone':
-            /**
-            * This is Premium feature.
-            * Check premium feature at https://trakteer.id/red-emperor/showcase or chat Author for Information.
-            */
-            client.reply(from, 'ehhh, what\'s that???', id)
+            if (!isGroupMsg) return client.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
+            if (!isGroupAdmins) return client.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin group', id)
+            const groupMem = await client.getGroupMembers(groupId)
+            let all = ''
+            for (let i = 0; i < groupMem.length; i++) {
+                all += ` @${groupMem[i].id.replace(/@c.us/g, '')}`
+            }
+            await sleep(2000)
+            await client.sendTextWithMentions(from, all)
             break
         case 'botstat': {
             const loadedMsg = await client.getAmountOfLoadedMessages()

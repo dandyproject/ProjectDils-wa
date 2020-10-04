@@ -12,8 +12,8 @@
 |       ✅       | Reply A Photo                    |
 |       ✅       | Image Url                        |
 |       ✅       | Animated sticker using giphy url |
-|       https://bit.ly/3hmgD4R       | sticker with no background       |
-|       https://bit.ly/3hmgD4R       | sticker meme      |
+|       SOON       | sticker with no background       |
+|       SOON       | sticker meme      |
 
 
 | Downloader |                     Feature                |
@@ -45,7 +45,7 @@
 |       ✅        |   Demote User                   |
 |       ✅        |   Kick User                     |
 |       ✅        |   Delete bot message            |
-|       https://bit.ly/3hmgD4R        |   Mention All User      |
+|       ✅        |   Mention All User      |
 
 ## To-Do
  - Add More Feature
