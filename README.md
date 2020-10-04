@@ -4,8 +4,6 @@
 [![Codefactor](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA/badge)](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA)
 </div>
 
-
-
 ## Features
 
 | Sticker Creator |                Feature           |
@@ -52,6 +50,9 @@
 ## Getting Started
 
 This project require NodeJS v12.
+
+### Deploy on Heroku
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/aidilaryanto/ProjectDils-wa/tree/master"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ### Install
 Clone this project

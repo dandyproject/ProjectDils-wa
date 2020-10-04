@@ -1,0 +1,14 @@
+{
+  "name": "ProjectDils WhatsApp Bot",
+  "description": "WhatsApp Bot running on Javascript",
+  "keywords": [
+    "whatsapp",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/aidilaryanto/ProjectDils-wa",
+  "website": "",
+  "stack": "container"
+}
