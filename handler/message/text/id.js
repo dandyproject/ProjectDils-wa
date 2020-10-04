@@ -26,76 +26,32 @@ exports.textMenu = (pushname) => {
 Hi, ${pushname}! 👋️
 Berikut adalah beberapa fitur yang ada pada bot ini!✨
 
-Sticker Creator:
-1. *!sticker*
-Untuk merubah gambar menjadi sticker. 
-Penggunaan: kirim gambar dengan caption *!sticker* atau balas gambar yang sudah dikirim dengan *!sticker*
+*Sticker Creator*
+ ┠ *!sticker* [Reply Gambar/jadikan Caption]
+ ┠ *!sticker* _<Link Gambar>_
+ ┠ *!gifsticker* _<Giphy Link>_
 
-2. *!sticker* _<Url Gambar>_
-Untuk merubah gambar dari url menjadi sticker. 
-Penggunaan: 
+*Downloader*
+ ┠ *!tiktok* _<Tiktok Link>_
+ ┠ *!fb* _<Post/Video Link>_
+ ┠ *!ig* _<Instagram Post Link>_
+ ┠ *!twt* _<Twitter Post Link>_
+ ┠ *!ytmp3* _<Youtube Link>_
+ ┠ *!ytmp4* _<Youtube Link>_
 
-3. *!gifsticker* _<Giphy URL>_ / *!stickergif* _<Giphy URL>_
-Untuk merubah gif menjadi sticker (Giphy Only)
-Penggunaan: Kirim pesan dengan format *!gifsticker https://media.giphy.com/media/JUvI2c1ddyzkwK4RlV/giphy.gif*
+*Edukasi*
+ ┠ *!translate* _<Kode Bahasa>_ [Reply Text]
+ ┠ *!brainly* _<Pertanyaan>_
+ ┠ *!wiki* _<Pertanyaan>_
 
-Downloader:
-1. *!tiktok* _<tiktok url>_
-Untuk mengunduh video dari video tiktok.
-Penggunaan: kirim pesan dengan format *!tiktok https://www.tiktok.com/@itsandani/video/6869248690381425922* 
+*Lain-lain*
+ ┠ *!resi* _<kurir>_ _<nomer resi>_
+ ┠ *!meme* _<teks atas>_ | _<teks bawah>_
+ ┠ *!ceklokasi*
+ ┠ *!tnc*
+ ┠ *!donasi*
 
-2. *!fb* _<post/video url>_
-Untuk mengunduh video dari Facebook.
-Penggunaan: kirim pesan dengan format *!fb https://www.facebook.com/.....*
-
-3. *!ig* _<instagram post url>_
-Untuk mengunduh photo dan video dari instagram.
-Penggunaan: kirim pesan dengan format *!ig https://www.instagram.com/p/BPOd1vhDMIp/*
-
-4. *!twt* _<twitter post url>_
-Untuk mengunduh photo dan video dari Twitter.
-Penggunaan: kirim pesan dengan format *!twt https://twitter.com/ntsana_/status/1306108656887324672*
-
-5. *!ytmp3* _<youtube url>_
-Untuk mengunduh mp3 dari Youtube.
-Penggunaan: kirim pesan dengan format *!ytmp3 https://www.youtube.com/.....*
-
-6. *!ytmp4* _<youtube url>_
-Untuk mengunduh video dari Youtube.
-Penggunaan: kirim pesan dengan format *!ytmp4 https://www.youtube.com/.....*
-
-Edukasi:
-
-1. *!translate* _<kode bahasa>_
-Untuk mengartikan pesan menjadi bahasa yang ditentukan.
-Penggunaan: Balas/quote/reply pesan yang ingin kamu translate dengan _*!translate id*_ <- id adalah kode bahasa. kode bahasa dapat dilihat di *https://bit.ly/33FVldE*
-
-2. *!brainly* _<pertanyaan>_
-Untuk mencari jawaban tugas sekolah.
-Penggunaan: Balas/quote/reply pesan/pertanyaan yang ingin kamu cari di brainly*
-
-3. *!wiki* _<pertanyaan>_
-Untuk mencari di wikipedia.
-Penggunaan: Balas/quote/reply pesan/pertanyaan yang ingin kamu cari di wiki*
-
-Lain-lain:
-1. *!resi* _<kurir>_ _<nomer resi>_
-Untuk memeriksa status pengiriman barang, daftar kurir: jne, pos, tiki, wahana, jnt, rpx, sap, sicepat, pcp, jet, dse, first, ninja, lion, idl, rex.
-Penggunaan: kirim pesan dengan format _*!resi jne 1238757632*_
-
-2. *!meme* _<teks atas>_ | _<teks bawah>_
-Untuk membuat meme dengan teks atas dan bawah
-Penggunaan: kirim gambar dengan caption _*!meme aku atas | kamu bawah*_, atau juga bisa dengan membalas gambar yang sudah ada.
-
-3. *!ceklokasi*
-Cek lokasi penyebaran covid-19 di daerah sekitarmu (kelurahan).
-Penggunaan: kirimkan lokasimu lalu balas/quote/reply lokasi yang kamu kirim dengan _*!ceklokasi*_
-
-4. *!tnc*
-Menampilkan Syarat dan Kondisi Bot.
-
-5. *!donasi*
-menampilkan informasi donasi.
+Silahkan baca *!readme*
 
 Hope you have a great day!✨`
 }
@@ -119,6 +75,16 @@ Untuk mention semua member grup. (Cooming Soon)
 
 5. *!del*
 Untuk menghapus pesan bot (balas pesan bot dengan !del)`
+}
+
+exports.textReadme = () => {
+    return `
+Berikut ini list yang dibutuhkan untuk menjalankan beberapa fitur:
+
+• Kode Bahasa: *https://bit.ly/33FVldE*
+• Daftar kurir: jne, pos, tiki, wahana, jnt, rpx, sap, sicepat, pcp, jet, dse, first, ninja, lion, idl, rex.
+
+Terimakasih.`
 }
 
 exports.textDonasi = () => {

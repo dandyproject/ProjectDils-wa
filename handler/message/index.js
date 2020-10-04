@@ -66,6 +66,9 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
             await client.sendText(from, menuId.textAdmin())
             break
+        case 'readme':
+            await client.sendText(from, menuId.textReadme())
+            break
         case 'donate':
         case 'donasi':
             await client.sendText(from, menuId.textDonasi())
