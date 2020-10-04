@@ -105,7 +105,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'stickergif':
         case 'gifstiker':
         case 'gifsticker': {
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             const isGiphy = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
             const isMediaGiphy = url.match(new RegExp(/https?:\/\/media.giphy.com\/media/, 'gi'))
             if (isGiphy) {
@@ -132,7 +132,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         }
         // Video Downloader
         case 'tiktok':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('tiktok.com')) return client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.tiktok(url).then(async (videoMeta) => {
@@ -145,7 +145,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'ig':
         case 'instagram':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('instagram.com')) return client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.insta(url).then(async (data) => {
@@ -177,7 +177,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'twt':
         case 'twitter':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) & !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.tweet(url).then(async (data) => {
@@ -200,7 +200,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'fb':
         case 'facebook':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('facebook.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, '_Scraping Metadata..._', id)
             downloader.facebook(url).then(async (videoMeta) => {
@@ -223,7 +223,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 .catch((err) => client.reply(from, `Error, url tidak valid atau tidak memuat video. [Invalid Link or No Video] \n\n${err}`, id))
             break
         case 'ytmp3':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, '_Scraping Metadata..._', id)
             downloader.ytmp3(url).then(async (ytMeta) => {
@@ -241,7 +241,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             })
             break
         case 'ytmp4' :
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
             await client.reply(from, '_Scraping Metadata..._', id)
             downloader.ytmp4(url).then(async (ytMetav) => {
@@ -261,14 +261,14 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         // Education Command
         case 'brainly':
             if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
-            await client.reply(from, '_Scraping Metadata..._ \n\nTerimakasih telah menggunakan bot ini, kamu dapat membantu pengembangan bot ini dengan menyawer melalui https://saweria.co/donate/Kry9toN \nTerimakasih.', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
             edukasi.brainly(string)
                 .then((result) => client.reply(from, result, id))
                 .catch(() => client.reply(from, 'Error, Pertanyaan mu tidak ada di database kami.', id))
             break
         case 'wiki':
             if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
-            await client.reply(from, '_Scraping Metadata..._ \n\nTerimakasih telah menggunakan bot ini, kamu dapat membantu pengembangan bot ini dengan menyawer melalui https://saweria.co/donate/Kry9toN \nTerimakasih.', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
             edukasi.wiki(args[0])
                 .then((result) => client.reply(from, result, id))
                 .catch(() => client.reply(from, 'Error, Pertanyaan mu tidak ada di database kami.', id))
@@ -290,15 +290,15 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             }
             break
         case 'resi':
-            if (args.length !== 2) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 2) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             const kurirs = ['jne', 'pos', 'tiki', 'wahana', 'jnt', 'rpx', 'sap', 'sicepat', 'pcp', 'jet', 'dse', 'first', 'ninja', 'lion', 'idl', 'rex']
             if (!kurirs.includes(args[0])) return client.sendText(from, `Maaf, jenis ekspedisi pengiriman tidak didukung layanan ini hanya mendukung ekspedisi pengiriman ${kurirs.join(', ')} Tolong periksa kembali.`)
             console.log('Memeriksa No Resi', args[1], 'dengan ekspedisi', args[0])
             cekResi(args[0], args[1]).then((result) => client.sendText(from, result))
             break
         case 'translate':
-            if (args.length != 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!quotedMsg) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length != 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
+            if (!quotedMsg) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             const quoteText = quotedMsg.type == 'chat' ? quotedMsg.body : quotedMsg.type == 'image' ? quotedMsg.caption : ''
             translate(quoteText, args[0])
                 .then((result) => client.sendText(from, result))
@@ -319,7 +319,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             client.sendText(from, text)
             break
         case 'lirik':
-            if (args.length == 0) return client.reply(from, 'Maaf, format pesan salah. Silahkan liat *!menu*', id)
+            if (args.length == 0) return client.reply(from, 'Maaf, format pesan salah. Silahkan liat *!menu* [Wrong Format]', id)
             const lagu = body.slice(7)
             const lirik = await functions.liriklagu(lagu)
             client.reply(from, lirik, id)
