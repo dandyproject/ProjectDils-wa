@@ -146,35 +146,19 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'ig':
         case 'instagram':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
-            if (!isUrl(url) && !url.includes('instagram.com')) return client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
-            downloader.insta(url).then(async (data) => {
-                if (data.type == 'GraphSidecar') {
-                    if (data.image.length != 0) {
-                        data.image.map((x) => client.sendFileFromUrl(from, x, 'photo.jpg', '', null, null, true))
-                            .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
-                            .catch((err) => console.error(err))
-                    }
-                    if (data.video.length != 0) {
-                        data.video.map((x) => client.sendFileFromUrl(from, x.videoUrl, 'video.jpg', '', null, null, true))
-                            .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
-                            .catch((err) => console.error(err))
-                    }
-                } else if (data.type == 'GraphImage') {
-                    client.sendFileFromUrl(from, data.image, 'photo.jpg', '', null, null, true)
-                        .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
-                        .catch((err) => console.error(err))
-                } else if (data.type == 'GraphVideo') {
-                    client.sendFileFromUrl(from, data.video.videoUrl, 'video.mp4', '', null, null, true)
-                        .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
-                        .catch((err) => console.error(err))
+            if (!isUrl(url) && !url.includes('instagram.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+            await client.reply(from, '_Scraping Metadata..._', id)
+            downloader.insta(url).then(async (igMetav) => {
+                if (igMetav.result.includes('.mp4')) {
+                    var ext = '.mp4'
+                } else {
+                    var ext = '.jpg'
                 }
-            })
-                .catch((err) => {
-                    if (err === 'Not a video') { return client.reply(from, 'Error, tidak ada video di link yang kamu kirim. [Invalid Link]', id) }
-                    client.reply(from, 'Error, user private atau link salah [Private or Invalid Link]', id)
-                })
-            break
+                if (igMetav.status != 200) client.reply(from, 'Maaf, link anda tidak valid atau profile private.', id)
+                await client.sendFileFromUrl(from, igMetav.result, `${ext}`, null, null, true)
+                .catch(() => client.reply(from, 'Terjadi kesalahan mungkin link yang anda kirim tidak valid atau profile private!', id))
+          })
+          break
         case 'twt':
         case 'twitter':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
@@ -232,7 +216,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 const links = ytMeta.result
                 const filesize = ytMeta.filesize
                 const status = ytMeta.status
-                if ( status !== 200) client.reply(from, 'Maaf, link anda tidak valid.', id)
+                if ( status !== 200 ) client.reply(from, 'Maaf, link anda tidak valid.', id)
                 if (Number(filesize.split(' MB')[0]) >= 30.00) return reject('Maaf durasi video sudah melebihi batas maksimal !')
                 client.sendFileFromUrl(from, thumbnail, 'thumbnail.jpg', `Judul: ${title}\nUkuran File: ${filesize}\n\nSilakan di tunggu lagi proses boss....`, null, true)
                 await client.sendFileFromUrl(from, links, `${title}.mp3`, null, null, true)
