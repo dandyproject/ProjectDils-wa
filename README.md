@@ -38,6 +38,7 @@
 |       ✅        |   Check Shipping info (indonesia only)         |
 |       ✅        |   Lyrics Search            |
 |       ✅        |   Instagram Profile Stalker            |
+|       ✅        |   Quote Maker            |
 |      BETA        |   Anti Spam                                   |
 
 

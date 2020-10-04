@@ -50,6 +50,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!ceklokasi*
  ┠ *!lirik* _<Band> <Judul Lagu>_
  ┠ *!igstalk* _<username>_
+ ┠ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
  ┠ *!tnc*
  ┠ *!donasi*
 

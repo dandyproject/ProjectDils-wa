@@ -340,6 +340,21 @@ module.exports = msgHandler = async (client = new Client(), message) => {
               .catch(() => client.reply(from, 'Terjadi kesalahan! Username yang anda kirim kemungkinan tidak valid!', id))
             })
             break
+        case 'quotemaker':
+            if (args.length >= 4) {
+                client.reply(from, '_Generate Quotes. Please wait..._', id)
+                const quotes = arg.split('|')[0]
+                const author = arg.split('|')[1]
+                const theme = arg.split('|')[2]
+                await functions.quotemaker(quotes, author, theme).then(amsu => {
+                    client.sendFile(from, amsu, 'quotesmaker.jpg','Ini quotes kamu').catch(() => {
+                       client.reply(from, mess.error.Qm, id)
+                    })
+                })
+            } else {
+                client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu* [Wrong Format]', id)
+            }
+            break
         // Group Commands (group admin only)
         case 'kick':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
