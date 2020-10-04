@@ -49,6 +49,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!meme* _<teks atas>_ | _<teks bawah>_
  ┠ *!ceklokasi*
  ┠ *!lirik* _<Band> <Judul Lagu>_
+ ┠ *!igstalk* _<username>_
  ┠ *!tnc*
  ┠ *!donasi*
 

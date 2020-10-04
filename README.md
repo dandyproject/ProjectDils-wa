@@ -37,6 +37,7 @@
 |       ✅        |   check data on the spread of Covid-19 in certain locations|
 |       ✅        |   Check Shipping info (indonesia only)         |
 |       ✅        |   Lyrics Search            |
+|       ✅        |   Instagram Profile Stalker            |
 |      BETA        |   Anti Spam                                   |
 
 
