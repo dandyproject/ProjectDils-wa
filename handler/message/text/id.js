@@ -55,6 +55,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!donasi*
 
 ❗ Silahkan baca *!readme* untuk lihat cara penggunaan.
+❗ Harap berikan jeda _*5 Detik*_ setiap menjalankan perintah bot.
 
 Hope you have a great day!✨`
 }
