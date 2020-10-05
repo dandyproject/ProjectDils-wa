@@ -79,6 +79,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'sticker':
         case 'stiker': {
             if ((isMedia || isQuotedImage) && args.length === 0) {
+                client.reply(from, '_Making Sticker. Please wait..._', id)
                 const encryptMedia = isQuotedImage ? quotedMsg : message
                 const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
                 const mediaData = await decryptMedia(encryptMedia, uaOverride)
@@ -111,6 +112,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             const isGiphy = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
             const isMediaGiphy = url.match(new RegExp(/https?:\/\/media.giphy.com\/media/, 'gi'))
             if (isGiphy) {
+                client.reply(from, '_Making GIF Sticker. Please wait..._', id)
                 const getGiphyCode = url.match(new RegExp(/(\/|\-)(?:.(?!(\/|\-)))+$/, 'gi'))
                 if (!getGiphyCode) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
                 const giphyCode = getGiphyCode[0].replace(/[-\/]/gi, '')
@@ -120,6 +122,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 }).catch((err) => console.log(err))
             } else if (isMediaGiphy) {
+                client.reply(from, '_Making GIF Sticker. Please wait..._', id)
                 const gifUrl = url.match(new RegExp(/(giphy|source).(gif|mp4)/, 'gi'))
                 if (!gifUrl) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
                 const smallGifUrl = url.replace(gifUrl[0], 'giphy-downsized.gif')
@@ -149,7 +152,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'instagram':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('instagram.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.insta(url).then(async (igMetav) => {
                 if (igMetav.result.includes('.mp4')) {
                     var ext = '.mp4'
@@ -188,7 +191,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'facebook':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('facebook.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.facebook(url).then(async (videoMeta) => {
                 const title = videoMeta.response.title
                 const thumbnail = videoMeta.response.thumbnail
@@ -211,7 +214,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'ytmp3':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.ytmp3(url).then(async (ytMeta) => {
                 const title = ytMeta.title
                 const thumbnail = ytMeta.thumb
@@ -229,7 +232,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'ytmp4' :
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
             if (!isUrl(url) && !url.includes('youtube.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.ytmp4(url).then(async (ytMetav) => {
                 const title = ytMetav.title
                 const thumbnail = ytMetav.thumb
@@ -247,14 +250,14 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         // Education Command
         case 'brainly':
             if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             edukasi.brainly(string)
                 .then((result) => client.reply(from, result, id))
                 .catch(() => client.reply(from, 'Error, Pertanyaan mu tidak ada di database kami.', id))
             break
         case 'wiki':
             if (args.length === 0) return client.reply(from, 'Harap masukan pertanyaan yang di cari!', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             edukasi.wiki(args[0])
                 .then((result) => client.reply(from, result, id))
                 .catch(() => client.reply(from, 'Error, Pertanyaan mu tidak ada di database kami.', id))
@@ -262,6 +265,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         // Other Command
         case 'meme':
             if ((isMedia || isQuotedImage) && args.length >= 2) {
+                client.reply(from, '_Generate Meme. Please wait..._', id)
                 const top = arg.split('|')[0]
                 const bottom = arg.split('|')[1]
                 const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -312,7 +316,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'igstalk':
             if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu*. [Wrong Format]', id)
-            await client.reply(from, '_Scraping Metadata..._', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             igstalk(args[0]).then(async (igMeta) => {
               if ( igMeta.status !== 200) client.reply(from, 'Maaf, username yang anda kirim tidak valid.', id)
               const foto = igMeta.Profile_pic
@@ -357,7 +361,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'kickall':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
             const isGroupOwner = sender.id === chat.groupMetadata.owner
-            if (!isGroupOwner) return client.reply(from, 'Maaf, erintah ini hanya bisa di gunakan oleh Owner group! [Owner Group Only]', id)
+            if (!isGroupOwner) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan oleh Owner group! [Owner Group Only]', id)
             if (!isBotGroupAdmins) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan ketika bot menjadi admin [Bot not Admin]', id)
             const allMem = await client.getGroupMembers(groupId)
             for (let i = 0; i < allMem.length; i++) {
@@ -444,6 +448,14 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             }
             await functions.sleep(2000)
             await client.sendTextWithMentions(from, all)
+            break
+        case 'clearall':
+            if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot [Owner Bot Only]', id)
+            const allChatz = await client.getAllChats()
+            for (let dchat of allChatz) {
+                await client.deleteChat(dchat.id)
+            }
+            client.reply(from, 'Succes clear all chat!', id)
             break
         case 'botstat': {
             const loadedMsg = await client.getAmountOfLoadedMessages()
