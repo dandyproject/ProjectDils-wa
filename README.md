@@ -1,6 +1,8 @@
+![logo](https://telegra.ph/file/51d4d3c1dd50b4a0c86e7.png)
+
 <div align="center">
  
-# Whatsapp Bot - sticker creator
+# ProjectDils - Whatsapp Bot
 [![Codefactor](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA/badge)](https://www.codefactor.io/repository/github/aidilaryanto/ProjectDils-WA)
 </div>
 
