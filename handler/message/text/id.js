@@ -50,7 +50,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!ceklokasi*
  ┠ *!lirik* _<Band> <Judul Lagu>_
  ┠ *!igstalk* _<username>_
- ┠ *!quotemaker* _<text>_|_<author>_|_<theme>_
+ ┠ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
  ┠ *!tnc*
  ┠ *!donasi*
 
@@ -92,14 +92,14 @@ Cara penggunaan beberapa fitur:
  ┠ Daftar kurir: jne, pos, tiki, jnt, sicepat, jet, ninja.
  ┠ *Ex:* *!cekresi sicepat 123456789*
 
-*!quotemaker* _<text>_|_<author>_|_<theme>_
- ┠ Text min. 3 kata
+*!quotemaker* _<text>_ | _<author>_ | _<theme>_
+ ┠ Theme: silahkan ini dengan tema yang sesuai quotes anda
  ┠ *Ex:* *!quotemaker this is quote maker|Aidil|Urban*
- ┠ ❗ Harap perhatikan penggunaan spasi pada tanda pemisah |
+ ┠ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
 
 *!meme* _<teks atas>_ | _<teks bawah>_
  ┠ *Ex:* *!meme text atas | text bawah*
- ┠ ❗ Harap perhatikan penggunaan spasi pada tanda pemisah |
+ ┠ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
 
 *!ceklokasi*
  ┠ *Ex:* reply send location kamu dengan *!ceklokasi*

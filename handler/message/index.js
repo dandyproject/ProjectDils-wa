@@ -334,8 +334,8 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             if (args.length >= 4) {
                 client.reply(from, '_Generate Quotes. Please wait..._', id)
                 const quotes = arg.split('|')[0]
-                const author = arg.split('|')[1]
-                const theme = arg.split('|')[2]
+                const author = arg.split(' | ')[1]
+                const theme = arg.split(' | ')[2]
                 await functions.quotemaker(quotes, author, theme).then(amsu => {
                     client.sendFile(from, amsu, 'quotesmaker.jpg','Ini quotes kamu').catch(() => {
                        client.reply(from, 'Maaf, kemungkinan tema tidak tersedia', id)
