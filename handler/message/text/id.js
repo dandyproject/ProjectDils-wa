@@ -77,6 +77,18 @@ exports.textAdmin = () => {
 Hope you have a great day!✨`
 }
 
+exports.textOwner = () => {
+    return `
+⚠ [ *Owner Bot Only* ] ⚠ 
+
+*Owner Features*
+ ┠ *!bc*
+ ┠ *!clearall*
+ ┠ *!leaveall*
+
+Hope you have a great day!✨`
+}
+
 exports.textReadme = () => {
     return `
 Cara penggunaan beberapa fitur:

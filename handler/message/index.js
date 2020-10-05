@@ -68,6 +68,10 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
             await client.sendText(from, menuId.textAdmin())
             break
+        case 'menuowner':
+            if (!isOwner) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh Owner Bot! [Owner Bot Only]', id)
+            await client.sendText(from, menuId.textOwner())
+            break
         case 'readme':
             await client.sendText(from, menuId.textReadme())
             break
@@ -402,16 +406,6 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             	client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
             }
             break
-        case 'bc':
-            if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot! [Owner Bot Only]', id)
-            let msg = body.slice(4)
-            const chatz = await client.getAllChatIds()
-            for (let ids of chatz) {
-                var cvk = await client.getChatById(ids)
-                if (!cvk.isReadOnly) await client.sendText(ids, `[ ProjectDils BOT Broadcast ]\n\n${msg}`)
-            }
-            client.reply(from, 'Broadcast Success!', id)
-            break
         case 'adminlist':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
             let mimin = ''
@@ -449,13 +443,34 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             await functions.sleep(2000)
             await client.sendTextWithMentions(from, all)
             break
+        // Owner Command
+        case 'bc':
+            if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot! [Owner Bot Only]', id)
+            let msg = body.slice(4)
+            const chatz = await client.getAllChatIds()
+            for (let ids of chatz) {
+                var cvk = await client.getChatById(ids)
+                if (!cvk.isReadOnly) await client.sendText(ids, `[ ProjectDils BOT Broadcast ]\n\n${msg}`)
+            }
+            client.reply(from, 'Broadcast Success!', id)
+            break
+        case '!leaveall':
+            if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot [Owner Bot Only]', id)
+            const allChats = await client.getAllChatIds()
+            const allGroups = await client.getAllGroups()
+            for (let gclist of allGroups) {
+                await client.sendText(gclist.contact.id, `Maaf, bot sedang pembersihan. Total chat aktif : ${allChats.length}`)
+                await client.leaveGroup(gclist.contact.id)
+            }
+            client.sendText(from, '_Success leave all group!_', id)
+            break
         case 'clearall':
             if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot [Owner Bot Only]', id)
             const allChatz = await client.getAllChats()
             for (let dchat of allChatz) {
                 await client.deleteChat(dchat.id)
             }
-            client.reply(from, 'Succes clear all chat!', id)
+            client.sendText(from, '_Success clear all chat!_', id)
             break
         case 'botstat': {
             const loadedMsg = await client.getAmountOfLoadedMessages()

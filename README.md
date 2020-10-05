@@ -59,8 +59,8 @@
 | Owner Bot Only  |                     Feature                     |
 | :------------: | :---------------------------------------------: |
 |       ✅        |   Broadcast                  |
-|      SOON        |   Leave All Group                   |
-|      SOON        |   Clear All Messages                     |
+|       ✅        |   Leave All Group                   |
+|       ✅        |   Clear All Messages                     |
 
 ## To-Do
  - Add More Feature
@@ -90,7 +90,7 @@ Install the dependencies:
 ```
 
 ### Usage
-Before running this script, first edit [`THIS`](https://github.com/aidilaryanto/ProjectDils-wa/blob/master/handler/message/index.js.js#L20) section with your WhatsApp number, remember your WhatsApp number!  Not a bot number, then
+Before running this script, first edit [`THIS`](https://github.com/aidilaryanto/ProjectDils-wa/blob/master/handler/message/index.js#L20) section with your WhatsApp number, remember your WhatsApp number!  Not a bot number, then
 ```bash
 > npm start
 ```
@@ -105,3 +105,8 @@ Fix Stuck on linux, install google chrome stable:
 > wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 > sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
+
+## Special Thanks to
+* [`open-wa/wa-automate-nodejs`](https://github.com/open-wa/wa-automate-nodejs)
+* [`YogaSakti/imageToSticker`](https://github.com/YogaSakti/imageToSticker)
+* [`MhankBarBar/whatsapp-bot`](https://github.com/MhankBarBar/whatsapp-bot)
