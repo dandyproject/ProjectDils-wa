@@ -349,6 +349,13 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 client.reply(from, 'Maaf, format pesan salah silahkan periksa *!menu* [Wrong Format]', id)
             }
             break
+        case 'chord':
+            if (args.length === 0) return client.reply(from, 'Harap masukkan judul lagu yang di cari!', id)
+            await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
+            functions.chord(string)
+                .then((result) => client.reply(from, result, id))
+                .catch(() => client.reply(from, 'Error, Chord lagu yang anda cari tidak ada di database kami.', id))
+            break
         // Group Commands (group admin only)
         case 'kick':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)

@@ -49,6 +49,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ┠ *!meme* _<teks atas>_ | _<teks bawah>_
  ┠ *!ceklokasi*
  ┠ *!lirik* _<Band> <Judul Lagu>_
+ ┠ *!chord* _<Band> <Judul Lagu>_
  ┠ *!igstalk* _<username>_
  ┠ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
  ┠ *!tnc*
@@ -118,7 +119,10 @@ Cara penggunaan beberapa fitur:
  ┠ *Ex:* reply send location kamu dengan *!ceklokasi*
 
 *!lirik* _<Band> <Judul Lagu>_
- ┠ *Ex:* *!lirik Nadin Amizah Bertaut*
+ ┠ *Ex:* *!lirik Nadin Amizah Bertaut* atau *!lirik Bertaut*
+
+*!chord* _<Band> <Judul Lagu>_
+ ┠ *Ex:* *!chord Barasuara Guna Manusia* atau *!lirik Guna Manusia*
 
 *!igstalk* _<Username>_
  ┠ *Ex:* *!igstalk aidilaryanto*

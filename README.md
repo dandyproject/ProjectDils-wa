@@ -41,6 +41,7 @@
 |       ✅        |   Lyrics Search            |
 |       ✅        |   Instagram Profile Stalker            |
 |       ✅        |   Quote Maker            |
+|       ✅        |   Chord Search            |
 |      BETA        |   Anti Spam                                   |
 
 | Grup Only  |                     Feature                     |
