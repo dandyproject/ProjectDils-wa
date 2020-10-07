@@ -474,6 +474,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         case 'clearall':
             if (!isOwner) return client.reply(from, 'Maaf, perintah ini hanya untuk Owner bot [Owner Bot Only]', id)
             const allChatz = await client.getAllChats()
+            client.reply(from, '_Clearing...Please wait!_', id)
             for (let dchat of allChatz) {
                 await client.deleteChat(dchat.id)
             }
