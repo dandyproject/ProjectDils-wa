@@ -119,10 +119,11 @@ Cara penggunaan beberapa fitur:
  └ *Ex:* reply send location kamu dengan *!ceklokasi*
 
 *!lirik* _<Band> <Judul Lagu>_
- └ *Ex:* *!lirik Nadin Amizah Bertaut* atau *!lirik Bertaut*
+ └ *Ex:* *!lirik Nadin Amizah Rumpang* atau *!lirik Rumpang*
 
 *!chord* _<Band> <Judul Lagu>_
- └ *Ex:* *!chord Barasuara Guna Manusia* atau *!lirik Guna Manusia*
+ ├ *Ex:* *!chord Nadin Amizah Bertaut* atau *!chord Bertaut*
+ └ ❗ Jika chord tidak muncul (hanya _scrapping metadata_), artinya chord tidak tersedia!
 
 *!igstalk* _<Username>_
  └ *Ex:* *!igstalk aidilaryanto*
