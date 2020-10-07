@@ -415,7 +415,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             break
         case 'adminlist':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya bisa di gunakan dalam group! [Group Only]', id)
-            let mimin = ''
+            let mimin = '[ ADMIN LIST ]\n\n'
             for (let admon of groupAdmins) {
                 mimin += `• @${admon.replace(/@c.us/g, '')}\n`
             }
