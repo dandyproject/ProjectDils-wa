@@ -26,34 +26,34 @@ exports.textMenu = (pushname) => {
 Hi, ${pushname}! 👋️
 Berikut adalah beberapa fitur yang ada pada bot ini!✨
 
-*Sticker Creator*
- ┠ *!sticker* [Reply Gambar/jadikan Caption]
- ┠ *!sticker* _<Link Gambar>_
- ┠ *!gifsticker* _<Giphy Link>_
+🧩 _*Sticker Creator*_
+ ├ *!sticker* [Reply Gambar/jadikan Caption]
+ ├ *!sticker* _<Link Gambar>_
+ └ *!gifsticker* _<Giphy Link>_
 
-*Downloader*
- ┠ *!tiktok* _<Tiktok Link>_
- ┠ *!fb* _<Post/Video Link>_
- ┠ *!ig* _<Instagram Post Link>_
- ┠ *!twt* _<Twitter Post Link>_
- ┠ *!ytmp3* _<Youtube Link>_
- ┠ *!ytmp4* _<Youtube Link>_
+🧩 _*Downloader*_
+ ├ *!tiktok* _<Tiktok Link>_
+ ├ *!fb* _<Post/Video Link>_
+ ├ *!ig* _<Instagram Post Link>_
+ ├ *!twt* _<Twitter Post Link>_
+ ├ *!ytmp3* _<Youtube Link>_
+ └ *!ytmp4* _<Youtube Link>_
 
-*Edukasi*
- ┠ *!translate* _<Kode Bahasa>_ [Reply Text]
- ┠ *!brainly* _<Pertanyaan>_
- ┠ *!wiki* _<Pertanyaan>_
+🧩 _*Edukasi*_
+ ├ *!translate* _<Kode Bahasa>_ [Reply Text]
+ ├ *!brainly* _<Pertanyaan>_
+ └ *!wiki* _<Pertanyaan>_
 
-*Lain-lain*
- ┠ *!resi* _<kurir>_ _<nomer resi>_
- ┠ *!meme* _<teks atas>_ | _<teks bawah>_
- ┠ *!ceklokasi*
- ┠ *!lirik* _<Band> <Judul Lagu>_
- ┠ *!chord* _<Band> <Judul Lagu>_
- ┠ *!igstalk* _<username>_
- ┠ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
- ┠ *!tnc*
- ┠ *!donasi*
+🧩 _*Lain-lain*_
+ ├ *!resi* _<kurir>_ _<nomer resi>_
+ ├ *!meme* _<teks atas>_ | _<teks bawah>_
+ ├ *!ceklokasi*
+ ├ *!lirik* _<Band> <Judul Lagu>_
+ ├ *!chord* _<Band> <Judul Lagu>_
+ ├ *!igstalk* _<username>_
+ ├ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
+ ├ *!tnc*
+ └ *!donasi*
 
 ❗ Silahkan baca *!readme* untuk lihat cara penggunaan.
 ❗ Harap berikan jeda _*5 Detik*_ setiap menjalankan perintah bot.
@@ -65,16 +65,16 @@ exports.textAdmin = () => {
     return `
 ⚠ [ *Admin Group Only* ] ⚠ 
 
-*Group Features*
- ┠ *!kick* @user
- ┠ *!kickall*
- ┠ *!promote* @user
- ┠ *!demote* @user
- ┠ *!tagall*
- ┠ *!del*
- ┠ *!adminlist*
- ┠ *!ownergroup*
- ┠ *!linkgroup*
+🧩 _*Group Features*_
+ ├ *!kick* @user
+ ├ *!kickall*
+ ├ *!promote* @user
+ ├ *!demote* @user
+ ├ *!tagall*
+ ├ *!del*
+ ├ *!adminlist*
+ ├ *!ownergroup*
+ └ *!linkgroup*
 
 Hope you have a great day!✨`
 }
@@ -83,10 +83,10 @@ exports.textOwner = () => {
     return `
 ⚠ [ *Owner Bot Only* ] ⚠ 
 
-*Owner Features*
- ┠ *!bc*
- ┠ *!clearall*
- ┠ *!leaveall*
+🧩 _*Owner Features*_
+ ├ *!bc*
+ ├ *!clearall*
+ └ *!leaveall*
 
 Hope you have a great day!✨`
 }
@@ -96,36 +96,36 @@ exports.textReadme = () => {
 Cara penggunaan beberapa fitur:
 
 *!sticker*
- ┠ *Ex:* Kirim gambar dengan caption *!sticker* atau reply gambar dengan *!sticker*
+ └ *Ex:* Kirim gambar dengan caption *!sticker* atau reply gambar dengan *!sticker*
 
 *!translate* _<Kode Bahasa>_
- ┠ Kode Bahasa: *https://bit.ly/33FVldE*
- ┠ *Ex:* *!translate en* kemudian reply ke text
+ ├ Kode Bahasa: *https://bit.ly/33FVldE*
+ └ *Ex:* *!translate en* kemudian reply ke text
 
 *!cekresi* _<kurir>_ _<nomer resi>
- ┠ Daftar kurir: jne, pos, tiki, jnt, sicepat, jet, ninja.
- ┠ *Ex:* *!cekresi sicepat 123456789*
+ ├ Daftar kurir: jne, pos, tiki, jnt, sicepat, jet, ninja.
+ └ *Ex:* *!cekresi sicepat 123456789*
 
 *!quotemaker* _<text>_ | _<author>_ | _<theme>_
- ┠ Theme: silahkan ini dengan tema yang sesuai quotes anda
- ┠ *Ex:* *!quotemaker this is quote maker|Aidil|Urban*
- ┠ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
+ ├ Theme: silahkan ini dengan tema yang sesuai quotes anda
+ ├ *Ex:* *!quotemaker this is quote maker|Aidil|Urban*
+ └ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
 
 *!meme* _<teks atas>_ | _<teks bawah>_
- ┠ *Ex:* *!meme text atas | text bawah*
- ┠ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
+ ├ *Ex:* *!meme text atas | text bawah*
+ └ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
 
 *!ceklokasi*
- ┠ *Ex:* reply send location kamu dengan *!ceklokasi*
+ └ *Ex:* reply send location kamu dengan *!ceklokasi*
 
 *!lirik* _<Band> <Judul Lagu>_
- ┠ *Ex:* *!lirik Nadin Amizah Bertaut* atau *!lirik Bertaut*
+ └ *Ex:* *!lirik Nadin Amizah Bertaut* atau *!lirik Bertaut*
 
 *!chord* _<Band> <Judul Lagu>_
- ┠ *Ex:* *!chord Barasuara Guna Manusia* atau *!lirik Guna Manusia*
+ └ *Ex:* *!chord Barasuara Guna Manusia* atau *!lirik Guna Manusia*
 
 *!igstalk* _<Username>_
- ┠ *Ex:* *!igstalk aidilaryanto*
+ └ *Ex:* *!igstalk aidilaryanto*
 
 Terimakasih.`
 }
