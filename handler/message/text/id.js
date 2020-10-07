@@ -50,7 +50,7 @@ Berikut adalah beberapa fitur yang ada pada bot ini!✨
  ├ *!ceklokasi*
  ├ *!lirik* _<Band> <Judul Lagu>_
  ├ *!chord* _<Band> <Judul Lagu>_
- ├ *!igstalk* _<username>_
+ ├ *!igstalk* _<Username Instagram>_
  ├ *!quotemaker* _<text>_ | _<author>_ | _<theme>_
  ├ *!tnc*
  └ *!donasi*
@@ -108,7 +108,7 @@ Cara penggunaan beberapa fitur:
 
 *!quotemaker* _<text>_ | _<author>_ | _<theme>_
  ├ Theme: silahkan ini dengan tema yang sesuai quotes anda
- ├ *Ex:* *!quotemaker this is quote maker|Aidil|Urban*
+ ├ *Ex:* *!quotemaker this is quote maker | Aidil | Urban*
  └ ❗ Harap perhatikan penggunaan spasi sebelum dan setelah tanda pemisah |
 
 *!meme* _<teks atas>_ | _<teks bawah>_
@@ -125,7 +125,7 @@ Cara penggunaan beberapa fitur:
  ├ *Ex:* *!chord Nadin Amizah Bertaut* atau *!chord Bertaut*
  └ ❗ Jika chord tidak muncul (hanya _scrapping metadata_), artinya chord tidak tersedia!
 
-*!igstalk* _<Username>_
+*!igstalk* _<Username Instagram>_
  └ *Ex:* *!igstalk aidilaryanto*
 
 Terimakasih.`
